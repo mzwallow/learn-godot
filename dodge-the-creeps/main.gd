@@ -19,6 +19,9 @@ func game_over():
 	
 	$HUD.show_game_over()
 	
+	$Music.stop()
+	$DeathSound.play()
+	
 func new_game():
 	score = 0
 	$Player.start($StartPosition.position)
@@ -28,6 +31,8 @@ func new_game():
 	$HUD.show_message("Get Ready")
 	
 	get_tree().call_group("mobs", "queue_free")
+	
+	$Music.play()
 
 
 func _on_score_timer_timeout():
