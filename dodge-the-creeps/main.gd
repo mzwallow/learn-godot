@@ -52,6 +52,8 @@ func _on_mob_timer_timeout():
 	
 	# Choose a random location on Path2D
 	var mob_spawn_location = get_node("MobPath/MobSpawnLocation")
+	print(mob_spawn_location.progress_ratio)
+	mob_spawn_location.progress_ratio = randf()
 	
 	# Set the mob's direction perpendicular to the path direction.
 	var direction = mob_spawn_location.rotation + PI / 2
